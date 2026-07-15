@@ -13,7 +13,7 @@
 .mainVis .tit span.lus {font-family: var(--font-lus);}
 .mainVis .tit span.txt {transition-delay: 0.3s}
 .mainVis .tit p {margin-top: 50rem; line-height: 1.8; font-weight: 300; transition-delay: 0.5s}
-.mainVis .scroll {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: flex; align-items: center; flex-direction: column; gap: 10rem;}
+.mainVis .scroll {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: flex; align-items: center; flex-direction: column; gap: 10rem; pointer-events: none;}
 .mainVis .scroll .inr {display: inline-block; font-size: 13rem; font-weight: 500; color: rgba(255, 255, 255, 0.9); transition: all 0.4s ease-in-out;}
 .mainVis .scroll .txt em {animation: scroll_txt 2s ease-in-out 0s infinite;}
 .mainVis .scroll .icon {position: relative; width: 4rem; height: 30rem; background: rgba(255, 255, 255, 0.1); transition: all 0.4s ease-in-out; overflow: hidden;}
