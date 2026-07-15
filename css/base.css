@@ -62,8 +62,6 @@ html {font-size: 62.5%;}
 /* 검색엔진 고려한 숨기기, 로고, 제목, 링크 등, 버튼은 aria-label과 title */
 .visually-hidden{ overflow: hidden; position: absolute; width: 0; height: 0;}
 ::selection{ background: var(--primary); color: var(--white); }
-.ellipsis{ overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; height: 1lh; white-space: normal; word-break: break-all; }
-.ellipsis.e2{-webkit-line-clamp: 2; max-height: 3em;}
 
 /* sian */
 #sianBox {position:relative; min-width:auto; background:url(main.jpg) no-repeat 50% 0;}
@@ -79,75 +77,63 @@ html {font-size: 62.5%;}
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-}
-
+} 
 [data-ani="hide_show"] {
     opacity: 0;
     transition: opacity 0.7s var(--aniEase, ease) 0s;
 }
-
 [data-ani="hide_show"].motion__in {
     opacity: 1;
 }
-
 [data-ani="hide_showDown"] {
     opacity: 0;
     transform: translateY(var(--aniSize, -30rem));
     transition: var(--aniTime, 1s) var(--aniEase, ease) 0s;
     transition-property: opacity, transform;
 }
-
 [data-ani="hide_showDown"].motion__in {
     opacity: 1;
     transform: translateY(0);
     transition-delay: var(--aniDelay, 0s);
 }
-
 [data-ani="hide_showUp"] {
     opacity: 0;
     transform: translateY(var(--aniSize, 30rem));
     transition: var(--aniTime, 1s) var(--aniEase, ease) 0s;
     transition-property: opacity, transform;
 }
-
 [data-ani="hide_showUp"].motion__in {
     opacity: 1;
     transform: translateY(0rem);
     transition-delay: var(--aniDelay, 0s);
 }
-
 [data-ani="hide_showLeft"] {
     opacity: 0;
     transform: translateX(var(--aniSize, -30rem));
     transition: var(--aniTime, 0.9s) var(--aniEase, ease) 0s;
     transition-property: opacity, transform;
 }
-
 [data-ani="hide_showLeft"].motion__in {
     opacity: 1;
     transform: translateX(0rem);
     transition-delay: var(--aniDelay, 0s);
 }
-
 [data-ani="hide_showRight"] {
     opacity: 0;
     transform: translateX(var(--aniSize, 30rem));
     transition: var(--aniTime, 0.9s) var(--aniEase, ease) 0s;
     transition-property: opacity, transform;
 }
-
 [data-ani="hide_showRight"].motion__in {
     opacity: 1;
     transform: translateX(0);
     transition-delay: var(--aniDelay, 0s);
 }
 
-
 [data-ani="hide_overUp"].motion__in span i {
     transform: translateY(0%);
     transition-delay: var(--aniDelay, 0s);
 }
-
 [data-ani="slide_showX"] {
     clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
     transition: clip-path var(--aniTime, 1.5s) var(--aniEase, ease) 0s;
@@ -157,44 +143,3 @@ html {font-size: 62.5%;}
     clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
     transition-delay: var(--aniDelay, 0.2s);
 }
-
-[data-ani="slide_show_down"] {
-    clip-path: polygon(100% 0, 100% 0, 0 0, 0 0);
-    transition: clip-path var(--aniTime, 1.5s) var(--aniEase, ease) 0s;
-}
-
-[data-ani="slide_show_down"].motion__in {
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
-    transition-delay: var(--aniDelay, 0.2s);
-}
-
-[data-ani="slide_show_up"] {
-    clip-path: polygon(100% 100%, 100% 100%, 0 100%, 0 100%);
-    transition: clip-path var(--aniTime, 1.5s) var(--aniEase, ease) 0s;
-}
-
-[data-ani="slide_show_up"].motion__in {
-    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
-    transition-delay: var(--aniDelay, 0.2s);
-}
-
-[data-ani="slide_show_right"] {
-    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-    transition: clip-path var(--aniTime, 1.5s) var(--aniEase, ease) 0s;
-}
-
-[data-ani="slide_show_right"].motion__in {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    transition-delay: var(--aniDelay, 0.2s);
-}
-
-[data-ani="slide_show_left"] {
-    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-    transition: clip-path var(--aniTime, 1.5s) var(--aniEase, ease) 0s;
-}
-
-[data-ani="slide_show_left"].motion__in {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    transition-delay: var(--aniDelay, 0.2s);
-}
-

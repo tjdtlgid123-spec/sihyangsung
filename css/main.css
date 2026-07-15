@@ -1,10 +1,10 @@
 @charset "utf-8";
 
 /* inr */
-.inr {position: relative; margin: 0 auto; max-width: calc(var(--inr)); width: calc(var(--inr-width) * 100%); }
+.inr {position: relative; margin: 0 auto; max-width: calc(var(--inr) * 1rem); width: calc(var(--inr-width) * 100%); }
 
 /* mainVisual */
-.mainVis {position:relative; background: transparent; z-index: 10; text-align: center;}
+.mainVis {position:relative; height: 100vh; background: transparent; z-index: 10; text-align: center;}
 .mainVis::before{content: ""; display: block; position: absolute; bottom: -40rem; left: 0; right:0; height: 350rem; background: linear-gradient(to top, #0a0a0a 15% ,rgb(10, 10, 10, 0.7) , transparent); z-index: 10; pointer-events: none;}
 .mainVis .inr {height:100%; z-index: 10;}
 .mainVis .tit {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;} 
@@ -25,10 +25,6 @@
 .mainVis .scroll .txt em:nth-child(5){animation-delay: 1.16s;}
 .mainVis .scroll .txt em:nth-child(6){animation-delay: 1.2s;}
 
-@media(min-width:768px){
-	.mainVis {aspect-ratio: 1920/911}
-}
-
 /* mainProject */
 .mainList {position: relative; min-height: 100vh; background: #0a0a0a; padding-top: 200rem; box-sizing: border-box; z-index:10; overflow: hidden;}
 .mainList .inr {max-width:100%}
@@ -37,9 +33,9 @@
 .projectList .prBox {box-sizing: border-box; background:inherit; box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding: 40rem;}
 .projectList .prThum a {position: relative; display: block; overflow: hidden; aspect-ratio: 470 / 380;}
 .projectList .prThum a img {width: 100%; object-fit: cover; transition: transform 0.5s ease;}
-.projectList .prInfo {display: flex; align-items: center; justify-content: space-between; margin-top: 30rem;}
-.projectList .prInfo dt {font-size: 25rem; font-weight:600; letter-spacing: -0.01em; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
-.projectList .prInfo dd {display: flex; align-items: center; gap: 6rem; margin-top: 25rem;}
+.projectList .prInfo {display: flex; align-items: center; justify-content: space-between;}
+.projectList .prInfo dt {font-size: 25rem; font-weight:600; margin: 30rem 0 25rem; overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; height: 1lh; white-space: normal; word-break: break-all; text-overflow:ellipsis}
+.projectList .prInfo dd {display: flex; align-items: center; gap: 5rem;}
 .projectList .prInfo span {display: inline-block; font-size: 14rem; font-weight: 300; padding: 7rem 15rem; background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.9);}
 .projectList .prLink {width: 50rem; height: 50rem; border-radius: 50%; background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center;}
 .projectList .prLink svg {width: 16px; fill: var(--white)}
@@ -49,11 +45,9 @@
 /* canvas */
 canvas {position: absolute; inset: 0; z-index: 0; display: block; width: 100vw; height: 100vh;}
 
-/* footer */
-footer {background: #0a0a0a; padding: 80rem 0; font-size: 50rem; color: #fff; pointer-events: none;}
-footer .marquee {white-space: nowrap; margin-top: -60rem; animation: flow 30s linear infinite; font-size: 150rem; letter-spacing: -0.015em; text-transform: uppercase; color: rgba(255, 255, 255, 0.05); font-weight: 900; line-height: 1;}
-footer .marquee span {margin: 0 30rem;}
-footer .marquee span i {color: var(--primary)}
+ .marquee {padding: 80rem 0; pointer-events: none; white-space: nowrap; margin-top: -60rem; animation: flow 30s linear infinite; font-size: 150rem; letter-spacing: -0.015em; text-transform: uppercase; color: rgba(255, 255, 255, 0.05); font-weight: 900; line-height: 1;}
+ .marquee span {margin: 0 30rem;}
+ .marquee span i {color: var(--primary)}
 
 /* quick menu */
 .topBtn {position: fixed; bottom: 30rem; right: 30rem; width: 108rem; aspect-ratio: 1 / 1; z-index: 50; display: block; transition: transform 0.3s ease;}
@@ -69,13 +63,11 @@ footer .marquee span i {color: var(--primary)}
 	80% {top:40rem;opacity:1;}
 	100% {top:40rem;opacity:0;}
 }
-
 @keyframes scroll_txt {
     0% { opacity: 0;transform: translateY(-50%) rotateX(90deg)}
     20%,80% { opacity: 1; transform: translateY(0) rotateX(0) }
     100% { opacity: 0; transform: translateY(50%) rotateX(-90deg)}
 }
-
 @keyframes rotate360 {100%{ transform: rotate(360deg);}}
 @keyframes flow {from { transform: translateX(100%);} to { transform: translateX(-100%);}}
 
@@ -91,15 +83,40 @@ footer .marquee span i {color: var(--primary)}
 @media screen and (any-pointer: coarse) {
     .cursor {display: none !important;}
 }
-
-
 @media (max-width:1280px){
-	.mainVis::before {bottom: 0; height:100rem}
-	.mainVis .tit h2 {font-size: 60rem;}
+	.mainVis::before {bottom: 0; height:110rem}
+	.mainVis .tit h2 {font-size: 65rem;}
+	.mainList {padding-top: 120rem}
+	.projectList {gap: 30rem}
+	.projectList .prBox {padding: 25rem;}
+	.projectList .prBox:nth-child(3n-1) {transform: translateY(-50rem);}
+	.projectList .prInfo dd {flex-wrap: wrap;}
+	.projectList .prInfo dt {font-size: 18rem; margin: 20rem 0; }
+	.projectList .prInfo span {font-size: 12rem; padding: 6rem 8rem;}
+	.marquee {font-size: 100rem; margin-top: 0; padding: 40rem 0;}
+	
 }
 @media (max-width:1080px){
-	.mainVis .tit h2 {font-size: 60rem;}
-	.mainVis .tit .txt2 {font-size: 16rem; line-height: 1.4; margin-top: 30rem;}
+	.mainVis .tit p {font-size: 16rem; line-height: 1.4; margin-top: 35rem;}
+	.mainList {padding-top: 100rem}
+	.projectList {grid-template-columns: repeat(2, minmax(0, 1fr));}
+	.projectList .prBox:nth-child(3n-1) {transform: translateY(-0rem);}
+	.topBtn {bottom:15rem; right: 15rem; width: 70rem}
+	.topBtn img {height:16rem}
 }
-@media (max-width:768px){}
-@media (max-width:480px){}
+@media (max-width:768px){
+	.mainVis .tit h2 {font-size: 40rem; line-height: 1.1;}
+	.mainVis .tit p {font-size: 13rem; }
+	.mainVis .scroll {font-size: 10rem; gap:5rem; bottom:20rem}
+	.mainVis .scroll .icon {width:3rem; height:20rem}
+	.mainList {padding-top: 40rem}
+	.projectList {gap: 15rem}
+	.projectList .prBox {padding:12rem}
+	.projectList .prInfo dt {margin:12rem 0; font-size: 14rem; font-weight: 500;}
+	.projectList .prInfo span {font-size: 8rem;}
+	.marquee {font-size: 85rem; padding: 30rem 0; animation: flow 20s linear infinite;}
+	.topBtn {display: none;}
+}
+@media (max-width:480px){
+	.mainVis {max-height: 500rem}
+}
