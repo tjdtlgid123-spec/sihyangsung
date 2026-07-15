@@ -1,0 +1,200 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://webfontworld.github.io/pretendard/Pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=Fahkwang:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+/* 루트 변수 선언 */
+:root {
+    --inr: 1700;
+    --inr-width: .92;
+    --primary: #ff7400;
+    --white: #fff;
+    --black: ##0a0a0a;
+    --font-lus: 'lust-sans', sans-serif;
+}
+/* scroll */
+ @media(prefers-reduced-motion:no-preference){
+    html{ scroll-behavior: smooth; }
+}
+/* ::-webkit-scrollbar {width: 8rem; } */
+/* ::-webkit-scrollbar-thumb { background: #888; border-radius: 10px; } */
+/* ::-webkit-scrollbar-track { background: rgba(0, 0, 0, .5); } */
+
+/* reset */
+body {accent-color: var(--primary); font-size: 16rem; line-height: 1.5; font-family: 'Fahkwang', 'Pretendard', '맑은 고딕', '돋움', Dotum, '굴림', Gulim, Sans-serif; color: var(--white); overflow-wrap: break-word; word-break: keep-all; -webkit-text-size-adjust: none;  -moz-text-size-adjust: none;  -ms-text-size-adjust: none;}
+body, p, div, span, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, figure, input, textarea, button, select, table {margin: 0; padding: 0; box-sizing: border-box;}
+html,body{margin: 0; height:100%; overflow-x: hidden; background: #0a0a0a;}
+h1, h2, h3, h4, h5, h6, input, textarea, button, select, table {font-size: 1em;}
+img {vertical-align: top; border: 0; max-width: 100%;}
+ul, ol, li{list-style:none;}
+address, em, i {font-style:normal;}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+figure{padding:0px; margin:0px;}
+
+/* 링크 기본값 */
+a:link{text-decoration:none; color:#444;}
+a:visited{text-decoration:none; color:#444;}
+a:hover{text-decoration:none; color:#444;}
+a:active{text-decoration:none;}
+a:focus{text-decoration:none;}
+
+/* mobile */
+body{-webkit-text-size-adjust:none; -moz-text-size-adjust:none; -ms-text-size-adjust:none;}
+
+/* font */
+html {font-size: 62.5%;}
+/* 글자 크기 - clamp(각 영역의 최소, 기본, 최대 크기) */
+@media(min-width:1921px){
+    html{ font-size: clamp(0px, calc( ( 100 / 1920 ) * 1vw ), 500px ); }
+}
+@media(max-width:1920px) and (min-width:1280px){
+    html{ font-size: clamp(0px, calc( ( 100 / ( var(--inr) / var(--inr-width) ) ) * 1vw ), 1px ); }
+}
+@media(max-width:1279px) and (min-width:768px){
+    html{ font-size: clamp(0px, calc( ( 100 / 768 ) * .75vw ), 5px ); }
+}
+@media(max-width:767px){
+    html{ font-size: clamp(0px, calc( ( 100 / 360 ) * .875vw ), 5px ); }
+}
+
+/* 검색엔진 고려한 숨기기, 로고, 제목, 링크 등, 버튼은 aria-label과 title */
+.visually-hidden{ overflow: hidden; position: absolute; width: 0; height: 0;}
+::selection{ background: var(--primary); color: var(--white); }
+.ellipsis{ overflow: hidden; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 1; height: 1lh; white-space: normal; word-break: break-all; }
+.ellipsis.e2{-webkit-line-clamp: 2; max-height: 3em;}
+
+/* sian */
+#sianBox {position:relative; min-width:auto; background:url(main.jpg) no-repeat 50% 0;}
+#sianBox .box {display:block; overflow:hidden; position:relative; width:100%; margin:0 auto; font-size:0px;}
+#sianBox .info {position: relative; width:100%; box-sizing:border-box; padding:10px; background:#f2f2f2; font-size:14px; color:#666; text-align:center; word-break:keep-all;}
+#sianBox .info span {color:#ab1212;}
+#sianBox .siteBtn .link {position: fixed; bottom: 40px; right: 30px; display: flex; align-items: center; justify-content: center; font-sizes: 15px; line-height: 1.45; width: 120px; height: 120px; border-radius: 50%; background: #000; color: #fff !important; text-align: center;}
+#sianBox .img_main {width: 100%;}
+
+/* animation */
+[data-ani] {
+    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+[data-ani="hide_show"] {
+    opacity: 0;
+    transition: opacity 0.7s var(--aniEase, ease) 0s;
+}
+
+[data-ani="hide_show"].motion__in {
+    opacity: 1;
+}
+
+[data-ani="hide_showDown"] {
+    opacity: 0;
+    transform: translateY(var(--aniSize, -30rem));
+    transition: var(--aniTime, 1s) var(--aniEase, ease) 0s;
+    transition-property: opacity, transform;
+}
+
+[data-ani="hide_showDown"].motion__in {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: var(--aniDelay, 0s);
+}
+
+[data-ani="hide_showUp"] {
+    opacity: 0;
+    transform: translateY(var(--aniSize, 30rem));
+    transition: var(--aniTime, 1s) var(--aniEase, ease) 0s;
+    transition-property: opacity, transform;
+}
+
+[data-ani="hide_showUp"].motion__in {
+    opacity: 1;
+    transform: translateY(0rem);
+    transition-delay: var(--aniDelay, 0s);
+}
+
+[data-ani="hide_showLeft"] {
+    opacity: 0;
+    transform: translateX(var(--aniSize, -30rem));
+    transition: var(--aniTime, 0.9s) var(--aniEase, ease) 0s;
+    transition-property: opacity, transform;
+}
+
+[data-ani="hide_showLeft"].motion__in {
+    opacity: 1;
+    transform: translateX(0rem);
+    transition-delay: var(--aniDelay, 0s);
+}
+
+[data-ani="hide_showRight"] {
+    opacity: 0;
+    transform: translateX(var(--aniSize, 30rem));
+    transition: var(--aniTime, 0.9s) var(--aniEase, ease) 0s;
+    transition-property: opacity, transform;
+}
+
+[data-ani="hide_showRight"].motion__in {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: var(--aniDelay, 0s);
+}
+
+
+[data-ani="hide_overUp"].motion__in span i {
+    transform: translateY(0%);
+    transition-delay: var(--aniDelay, 0s);
+}
+
+[data-ani="slide_showX"] {
+    clip-path: polygon(50% 0, 50% 0, 50% 100%, 50% 100%);
+    transition: clip-path var(--aniTime, 1.5s) var(--aniEase, ease) 0s;
+}
+
+[data-ani="slide_showX"].motion__in {
+    clip-path: polygon(0% 0, 100% 0, 100% 100%, 0% 100%);
+    transition-delay: var(--aniDelay, 0.2s);
+}
+
+[data-ani="slide_show_down"] {
+    clip-path: polygon(100% 0, 100% 0, 0 0, 0 0);
+    transition: clip-path var(--aniTime, 1.5s) var(--aniEase, ease) 0s;
+}
+
+[data-ani="slide_show_down"].motion__in {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+    transition-delay: var(--aniDelay, 0.2s);
+}
+
+[data-ani="slide_show_up"] {
+    clip-path: polygon(100% 100%, 100% 100%, 0 100%, 0 100%);
+    transition: clip-path var(--aniTime, 1.5s) var(--aniEase, ease) 0s;
+}
+
+[data-ani="slide_show_up"].motion__in {
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 0);
+    transition-delay: var(--aniDelay, 0.2s);
+}
+
+[data-ani="slide_show_right"] {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    transition: clip-path var(--aniTime, 1.5s) var(--aniEase, ease) 0s;
+}
+
+[data-ani="slide_show_right"].motion__in {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition-delay: var(--aniDelay, 0.2s);
+}
+
+[data-ani="slide_show_left"] {
+    clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+    transition: clip-path var(--aniTime, 1.5s) var(--aniEase, ease) 0s;
+}
+
+[data-ani="slide_show_left"].motion__in {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    transition-delay: var(--aniDelay, 0.2s);
+}
+

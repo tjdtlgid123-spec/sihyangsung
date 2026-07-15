@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="format-detection" content="telephone=no">
+
+		<title>양지요양병원</title>
+		<link rel="stylesheet" type="text/css" href="../css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.css"/>		
+		<script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.js"></script>
+		
+		<style type="text/css">	
+			html,body{height:100%;}
+			.section:not(.fp-auto-height){height:100vh;}
+			.section img{object-fit:cover; width:100%; height:100%;}
+			.section span{display:block; width:100%; height:100%; margin:0 auto; background-repeat:no-repeat; background-position:50% 0; background-size:cover; transition:0.5s ease 0s;}
+			/* .section a{display:block; position:absolute;} */
+			#section00 a{ display:block; width:100%; height:100%; margin:0 auto; background-repeat:no-repeat; background-position:50% 0; background-size:cover; transition:0.5s ease 0s;}
+			#section05 span{height:290px;}
+			.quick{position:fixed; bottom:50px; right:20px; z-index:10; width:61px; height:444px; background:url(quick02.png) no-repeat 50% 0; transition:opacity 0.3s ease;}
+			body.fp-viewing-anchor0 .quick{background-image:url(quick.png)}
+			body.fp-viewing-anchor5 .quick{opacity:0;}
+		</style>
+
+		<script>
+			$(function(){
+				$('#fullpage').fullpage({
+					verticalCentered: true,
+					anchors: ['anchor0', 'anchor1', 'anchor2', 'anchor3', 'anchor4', 'anchor5'],
+					scrollingSpeed: 1000,
+				});
+
+				$('.popup__open').on('click', function(){
+					$(this).hide();
+					$('.popup__close').css('display','block');
+				});
+				$('.popup__close').on('click', function(){
+					$(this).hide();
+					$('.popup__open').css('display','block');
+				});
+			});
+		</script>				
+		
+	</head>
+	<body>
+
+		<div id="wrap">
+			<div id="fullpage">
+				<div class="section" id="section00"><span style="background-image:url(main01.jpg);"></span></div>
+				<div class="section" id="section01"><span style="background-image:url(main02.jpg);"></span></div>
+				<div class="section" id="section02"><span style="background-image:url(main03.jpg);"></span></div>
+				<div class="section" id="section03"><span style="background-image:url(main04.jpg);"></span></div>
+				<div class="section" id="section04"><span style="background-image:url(main05.jpg);"></span></div>
+				<div class="section fp-auto-height" id="section05"><span style="background-image:url(main06.jpg);"></span></div>
+			</div>
+			<div class="quick"></div>
+		</div>
+
+
+	</body>
+</html>

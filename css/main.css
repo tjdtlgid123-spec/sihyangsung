@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+/* inr */
+.inr {position: relative; margin: 0 auto; max-width: calc(var(--inr)); width: calc(var(--inr-width) * 100%); }
+
+/* mainVisual */
+.mainVis {position:relative; background: transparent; z-index: 10; text-align: center;}
+.mainVis::before{content: ""; display: block; position: absolute; bottom: -40rem; left: 0; right:0; height: 350rem; background: linear-gradient(to top, #0a0a0a 15% ,rgb(10, 10, 10, 0.7) , transparent); z-index: 10; pointer-events: none;}
+.mainVis .inr {height:100%; z-index: 10;}
+.mainVis .tit {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100%;} 
+.mainVis .tit h2 {font-size:110rem; text-transform: uppercase; line-height: 1.12;}
+.mainVis .tit span {display: block;}
+.mainVis .tit span.lus {font-family: var(--font-lus);}
+.mainVis .tit span.txt {transition-delay: 0.3s}
+.mainVis .tit p {margin-top: 50rem; line-height: 1.8; font-weight: 300; transition-delay: 0.5s}
+.mainVis .scroll {position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); display: flex; align-items: center; flex-direction: column; gap: 10rem;}
+.mainVis .scroll .inr {display: inline-block; font-size: 13rem; font-weight: 500; color: rgba(255, 255, 255, 0.9); transition: all 0.4s ease-in-out;}
+.mainVis .scroll .txt em {animation: scroll_txt 2s ease-in-out 0s infinite;}
+.mainVis .scroll .icon {position: relative; width: 4rem; height: 30rem; background: rgba(255, 255, 255, 0.1); transition: all 0.4s ease-in-out; overflow: hidden;}
+.mainVis .scroll .icon span {position: absolute; display: block; width: 4rem; height: 4rem; background: #fff; top: 4rem; left: 50%; transform: translateX(-50%); animation: scroll_ani 2s ease-in-out infinite; transition: all 0.4s ease-in-out;}
+.mainVis .scroll .txt em:nth-child(1){animation-delay: 1s;}
+.mainVis .scroll .txt em:nth-child(2){animation-delay: 1.04s;}
+.mainVis .scroll .txt em:nth-child(3){animation-delay: 1.08s;}
+.mainVis .scroll .txt em:nth-child(4){animation-delay: 1.12s;}
+.mainVis .scroll .txt em:nth-child(5){animation-delay: 1.16s;}
+.mainVis .scroll .txt em:nth-child(6){animation-delay: 1.2s;}
+
+@media(min-width:768px){
+	.mainVis {aspect-ratio: 1920/911}
+}
+
+/* mainProject */
+.mainList {position: relative; min-height: 100vh; background: #0a0a0a; padding-top: 200rem; box-sizing: border-box; z-index:10; overflow: hidden;}
+.mainList .inr {max-width:100%}
+.projectList {display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 50rem 50rem;}
+.projectList .prBox:nth-child(3n-1) {transform: translateY(-100px)}
+.projectList .prBox {box-sizing: border-box; background:inherit; box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05); backdrop-filter: blur(10px); padding: 40rem;}
+.projectList .prThum a {position: relative; display: block; overflow: hidden; aspect-ratio: 470 / 380;}
+.projectList .prThum a img {width: 100%; object-fit: cover; transition: transform 0.5s ease;}
+.projectList .prInfo {display: flex; align-items: center; justify-content: space-between; margin-top: 30rem;}
+.projectList .prInfo dt {font-size: 25rem; font-weight:600; letter-spacing: -0.01em; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.projectList .prInfo dd {display: flex; align-items: center; gap: 6rem; margin-top: 25rem;}
+.projectList .prInfo span {display: inline-block; font-size: 14rem; font-weight: 300; padding: 7rem 15rem; background: rgba(255, 255, 255, 0.1); color: rgba(255, 255, 255, 0.9);}
+.projectList .prLink {width: 50rem; height: 50rem; border-radius: 50%; background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center;}
+.projectList .prLink svg {width: 16px; fill: var(--white)}
+.projectList .prInfo span.point {color: #e9cd90;}
+.projectList .prThum a:hover img, .projectList .prThum a:focus img {transform: scale(1.005); filter: blur(2px) brightness(0.85); transition: transform 0.5s ease, filter 0.5s ease;}
+
+/* canvas */
+canvas {position: absolute; inset: 0; z-index: 0; display: block; width: 100vw; height: 100vh;}
+
+/* footer */
+footer {background: #0a0a0a; padding: 80rem 0; font-size: 50rem; color: #fff; pointer-events: none;}
+footer .marquee {white-space: nowrap; margin-top: -60rem; animation: flow 30s linear infinite; font-size: 150rem; letter-spacing: -0.015em; text-transform: uppercase; color: rgba(255, 255, 255, 0.05); font-weight: 900; line-height: 1;}
+footer .marquee span {margin: 0 30rem;}
+footer .marquee span i {color: var(--primary)}
+
+/* quick menu */
+.topBtn {position: fixed; bottom: 30rem; right: 30rem; width: 108rem; aspect-ratio: 1 / 1; z-index: 50; display: block; transition: transform 0.3s ease;}
+.topBtn.fix {opacity: 1;}
+.topBtn::before {position: absolute; top: 0; left: 0; width: 100%; content: ""; height: 100%; background: url(../images/rotate_txt.svg) center/contain no-repeat; animation: rotate360 12s linear infinite;}
+.topBtn img {height: 20rem; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);} 
+
+/* animation */
+@keyframes scroll_ani {
+	0% {top:-10rem; opacity:0;}
+	10% {top:-10rem; opacity:1;}
+	30% {top:-10rem;opacity:1;}
+	80% {top:40rem;opacity:1;}
+	100% {top:40rem;opacity:0;}
+}
+
+@keyframes scroll_txt {
+    0% { opacity: 0;transform: translateY(-50%) rotateX(90deg)}
+    20%,80% { opacity: 1; transform: translateY(0) rotateX(0) }
+    100% { opacity: 0; transform: translateY(50%) rotateX(-90deg)}
+}
+
+@keyframes rotate360 {100%{ transform: rotate(360deg);}}
+@keyframes flow {from { transform: translateX(100%);} to { transform: translateX(-100%);}}
+
+/* mouse custom */
+.cursor {position: fixed; left: 0; top: 0; pointer-events: none;}
+.cursor-small {width: 20px; height: 20px; left: -10px; top: -10px; border-radius: 50%; z-index: 99999; background: #ff7400; }
+.cursor-small span {color: rgba(0,0,0,0);}
+.cursor-small.more span {color: #333; display: block; line-height: 100px; text-align: center; text-transform: uppercase; font-weight: 600; font-size: 13px; letter-spacing: 0.5px; }
+
+@media (hover: none) {
+    .cursor{ display: none !important; }
+}
+@media screen and (any-pointer: coarse) {
+    .cursor {display: none !important;}
+}
+
+
+@media (max-width:1280px){
+	.mainVis::before {bottom: 0; height:100rem}
+	.mainVis .tit h2 {font-size: 60rem;}
+}
+@media (max-width:1080px){
+	.mainVis .tit h2 {font-size: 60rem;}
+	.mainVis .tit .txt2 {font-size: 16rem; line-height: 1.4; margin-top: 30rem;}
+}
+@media (max-width:768px){}
+@media (max-width:480px){}

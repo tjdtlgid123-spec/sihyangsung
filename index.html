@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="format-detection" content="telephone=no">
+        <title>성시향 포트폴리오</title>
+        <!-- 폰트 -->   
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://use.typekit.net/gca2wyy.css">
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/main.css">
+        <!-- JS 라이브러리 -->
+        <script src="js/jquery-1.12.2.min.js" defer></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js" defer></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.2/paper-full.min.js" defer></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js" defer></script>
+        <script src="js/custom.js" defer></script>
+
+        <!-- 파비콘 & OG -->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <meta property="og:title" content="성시향 포트폴리오">
+        <meta property="og:image" content="images/og_image.jpg">
+    </head>
+    <body>
+        <div id="wrap">
+            <main id="container">
+                <section class="mainVis">
+                    <div class="inr">
+                        <div class="tit">
+                            <h2><span class="lus" data-ani="hide_showLeft">Think Design Build</span><span data-ani="hide_showRight" class="txt">Experience the Detail</span></h2>
+                             <p data-ani="hide_showUp">안녕하세요 웹디자이너 & 퍼블리셔 성시향 포트폴리오 사이트입니다.<br>일부 프로젝트는 클라이언트의 수정요청에 따라 기존시안과 퍼블리싱이 상이할 수 있습니다.</p>
+                        </div>
+                        <div class="scroll">
+                            <p class="txt"><em>S</em><em>C</em><em>R</em><em>O</em><em>L</em><em>L</em></p>
+                            <div class="icon"><span></span></div>
+                        </div>
+                    </div>
+                    <canvas id="c" aria-hidden="true"></canvas>
+                </section>
+                <!-- 비주얼 -->
+                <div class="cursor cursor-small" aria-hidden="true"><span>more</span></div>
+                <section class="mainList">
+                    <div class="inr">
+                        <ul class="projectList">
+                            <li class="prBox">
+                                <div class="prThum"><a href="https://www.vds1.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/브이디에스.jpg" alt="브이디에스"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>브이디에스</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 브이디에스 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://sm-ent.kr/" target="_blank" rel="noopener noreferrer"><img src="images/에스엠이앤티.jpg" alt="에스엠이앤티"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>에스엠이앤티</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 에스엠이앤티 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="https://facultycouncil.khu.ac.kr/" target="_blank" rel="noopener noreferrer"><img src="images/경희대학교교수의회.jpg" alt="경희대학교 교수의회"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>경희대학교 교수의회</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 70%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 경희대학교 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="https://st.nshc.net/" target="_blank" rel="noopener noreferrer"><img src="images/NSHC보안교육.jpg" alt="NSHC 교육용 홈페이지"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>NSHC 교육용 홈페이지</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- NSHC 교육용 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://geneer.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/제니어.jpg" alt="(주)제니어"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>제니어</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 제니어 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="https://www.yjcare.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/양지기쁨병원.jpg" alt="양지기쁨병원"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>양지기쁨병원</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 양지기쁨병원 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="https://rebornamc.com/" target="_blank" rel="noopener noreferrer"><img src="images/리본동물병원.jpg" alt="리본동물병원"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>리본동물의료센터</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 리본동물의료센터 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://garamsteel.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/가람스틸.jpg" alt="가람스틸"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>가람스틸</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 가람스틸 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://kmtrading.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/케이엠트레이딩.jpg" alt="케이엠트레이딩"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>케이엠트레이딩</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 케이엠트레이딩 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://dhwithyou.kolinux2.koweb.net/" target="_blank" rel="noopener noreferrer"><img src="images/동행사회적협동조합.jpg" alt="동행사회적협동조합"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>동행사회적협동조합</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 동행사회적협동조합 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://djduct.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/대주공조닥트.jpg" alt="대주공조닥트"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>대주공조닥트</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 대주공조닥트 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="https://isk-global.com/" target="_blank" rel="noopener noreferrer"><img src="images/ISK글로벌.jpg" alt="ISK글로벌㈜"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>ISK 글로벌</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- ISK글로벌 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://www.rndtextile.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/알앤디텍스타일.jpg" alt="알앤디텍스타일"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>알앤디텍스타일</dt>
+                                        <dd><span>메인 디자인 100%</span><span>메인 퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 알앤디텍스타일㈜ -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://www.skhani.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/승구한의원.jpg" alt="승구한의원"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>승구한의원</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 승구한의원 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://www.ganatw.kr/" target="_blank" rel="noopener noreferrer"><img src="images/가나테크윈.jpg" alt="가나테크윈"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>가나테크윈</dt>
+                                        <dd><span>디자인 100%</span><span>서브 퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 가나테크윈 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://www.ibulls.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/불스.jpg" alt="불스"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>불스</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 불스 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://jk7007.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/제이케이종합건설.jpg" alt="(주)제이케이종합건설"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>제이케이종합건설</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 제이케이종합건설 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://hkliposome.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/한국리포좀.jpg" alt="(주)한국리포좀"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>한국리포좀</dt>
+                                        <dd><span>디자인 100%</span><span>메인 퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 한국리포좀 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://www.sktechwin.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/선광테크원.jpg" alt="선광테크원"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>선광테크윈</dt>
+                                        <dd><span>서브 디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 선광테크윈 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="https://www.yoosungfa.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/유성에프에이.jpg" alt="유성에프에이"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>유성에프에이</dt>
+                                        <dd><span>서브 디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 유성에프에이 -->
+                            
+                            <li class="prBox">
+                                <div class="prThum"><a href="https://lumilighting.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/루미라이팅.jpg" alt="루미라이팅"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>루미라이팅</dt>
+                                        <dd><span>메인 디자인 100%</span><span>메인 퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 루미라이팅 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://taesung0482.com/" target="_blank" rel="noopener noreferrer"><img src="images/태성기전.jpg" alt="태성기전"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>태성기전</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 태성기전 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://kkochiday.koweb.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/꼬치데이.jpg" alt="꼬치데이"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>꼬치데이</dt>
+                                        <dd><span>디자인 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 꼬치데이 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://sinki.koweb.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/신기.jpg" alt="(주)신기"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>신기</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 신기 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://thejoeuneng.com/" target="_blank" rel="noopener noreferrer"><img src="images/더조은에너지.jpg" alt="(주)더조은에너지"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>더조은에너지</dt>
+                                        <dd><span>서브 디자인 100%</span><span>서브 퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 더조은에너지 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://dytechwin.koweb.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/동양테크윈.jpg" alt="(주)동양테크윈"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>㈜동양테크윈</dt>
+                                        <dd><span>서브 디자인 100%</span><span>서브 퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 동양테크윈 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://www.hect.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/HECT.jpg" alt="(주)HECT"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>HECT</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- HECT -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://xn--939a2gw99a0ng.com/" target="_blank" rel="noopener noreferrer"><img src="images/강명건설.jpg" alt="(주)강명건설"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>㈜강명건설</dt>
+                                        <dd><span>서브 디자인 100%</span><span>서브 퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 강명건설 -->
+                    
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://mirinae-e.koweb.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/미리내전자.jpg" alt="미리내전자"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>미리내전자</dt>
+                                        <dd><span>메인 디자인 100%</span><span>메인 퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 미리내전자 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://hsungsan.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/성산한의원.jpg" alt="성산한의원"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>성산한의원</dt>
+                                        <dd><span>디자인 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 성산한의원 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="https://siminf.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/시민장례식장.jpg" alt="시민장례식장"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>시민장례식장</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 시민장례식장 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://ol-company.com/" target="_blank" rel="noopener noreferrer"><img src="images/오엘컴퍼니.jpg" alt="오엘컴퍼니"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>오엘컴퍼니</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 오엘컴퍼니 -->
+                            
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://ems.kolinux2.koweb.net/" target="_blank" rel="noopener noreferrer"><img src="images/이엠에스.jpg" alt="이엠에스"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>이엠에스</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 이엠에스 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://unieco.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/유니에코도시환경디자인연구소.jpg" alt="유니에코도시환경디자인연구소"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>유니에코도시환경디자인연구소</dt>
+                                        <dd><span>서브 디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 유니에코도시환경디자인연구소 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://kiapa.or.kr/" target="_blank" rel="noopener noreferrer"><img src="images/한국산업재해예방협회.jpg" alt="한국산업재해예방협회"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>한국산업재해예방협회</dt>
+                                        <dd><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 한국산업재해예방협회 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="https://kvos.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/한국수의종양의학연구회.jpg" alt="한국수의종양의학연구회"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>한국수의종양의학연구회</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 50%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 한국수의종양의학연구회 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://ksise-edu.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/한국안전환경과학원교육원.jpg" alt="한국안전환경과학원교육원"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>한국안전환경과학원교육원</dt>
+                                        <dd><span>서브 디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 한국안전환경과학원교육원 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://motor4504.com/" target="_blank" rel="noopener noreferrer"><img src="images/현대중전.jpg" alt="현대중전"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>현대중전</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 현대중전 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://k-solarbank.com/" target="_blank" rel="noopener noreferrer"><img src="images/한국쏠라뱅크.jpg" alt="한국쏠라뱅크"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>한국쏠라뱅크</dt>
+                                        <dd><span>메인 디자인 100%</span><span>퍼블리싱 50%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 한국쏠라뱅크 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://tgc-ltd.co.kr/" target="_blank" rel="noopener noreferrer"><img src="images/태경종합건설.jpg" alt="태경종합건설"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>태경종합건설</dt>
+                                        <dd><span>서브 디자인 100%</span><span>퍼블리싱 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 태경종합건설 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://xn--3e0b42zr5dpqau4a44r.com/" target="_blank" rel="noopener noreferrer"><img src="images/이순신소국밥.jpg" alt="이순신소국밥"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>이순신소국밥</dt>
+                                        <dd><span>디자인 100%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 이순신소국밥 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="http://sample.kohub.kr/DATA/SAMPLE/wooksung/ver04/index.html" target="_blank" rel="noopener noreferrer"><img src="images/욱성미디어.jpg" alt="욱성미디어"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>욱성미디어</dt>
+                                        <dd><span>메인 디자인 100%</span><span>퍼블리싱 50%</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 욱성미디어 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="project/강원특별자치도민체육대회/index.html" target="_blank" rel="noopener noreferrer"><img src="images/강원특별자치도민체육대회.jpg" alt="강원특별자치도민체육대회"></a></div>
+                                <div class="prInfo">
+
+                                    <dl>
+                                        <dt>강원특별자치도민체육대회 59회</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span><span class="point">시안 확인만 가능</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 강원특별자치도민체육대회 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="project/STU갤러리/index.html" target="_blank" rel="noopener noreferrer"><img src="images/STU갤러리.jpg" alt="STU 갤러리"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>STU갤러리</dt>
+                                        <dd><span>디자인 100%</span><span class="point">시안 확인만 가능</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- STU갤러리 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="project/아르클리닉/index.html" target="_blank" rel="noopener noreferrer"><img src="images/아르클리닉.jpg" alt="아르클리닉"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>아르클리닉</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span><span class="point">시안확인만가능</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 아르클리닉 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="project/광안천지식당/index.html" target="_blank" rel="noopener noreferrer"><img src="images/천지식당.jpg" alt="천지식당"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>광안천지식당</dt>
+                                        <dd><span>디자인 100%</span><span class="point">시안 확인만 가능</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 광안천지식당 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="project/봉명동내커피/index.html" target="_blank" rel="noopener noreferrer"><img src="images/봉명동내커피.jpg" alt="봉명동내커피"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>봉명동내커피</dt>
+                                        <dd><span>디자인 100%</span><span class="point">시안 확인만 가능</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 봉명동내커피 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="project/두시커피/index.html" target="_blank" rel="noopener noreferrer"><img src="images/두시커피.jpg" alt="두시커피 랜딩페이지"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>두시커피</dt>
+                                        <dd><span>디자인 100%</span><span class="point">시안 확인만 가능</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 두시커피 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="project/혼타코/index.html" target="_blank" rel="noopener noreferrer"><img src="images/혼타코.jpg" alt="혼타코"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>혼타코</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span><span class="point">시안 확인만 가능</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 혼타코 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="project/동행법인부동산/index.html" target="_blank" rel="noopener noreferrer"><img src="images/뉴동행법인부동산중개(주).jpg" alt="뉴동행법인부동산중개"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>뉴동행법인부동산중개㈜</dt>
+                                        <dd><span>디자인 100%</span><span>퍼블리싱 100%</span><span class="point">시안 확인만 가능</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 뉴동행법인부동산중개 -->
+
+                            <li class="prBox">
+                                <div class="prThum"><a href="project/빅머니파이낸셜/index.html" target="_blank" rel="noopener noreferrer"><img src="images/빅머니파이낸셜.jpg" alt="빅머니파이낸셜"></a></div>
+                                <div class="prInfo">
+                                    <dl>
+                                        <dt>빅머니파이낸셜</dt>
+                                        <dd><span>디자인 100%</span><span class="point">시안 확인만 가능</span></dd>
+                                    </dl>
+                                </div>
+                            </li>
+                            <!-- 빅머니파이낸셜 -->
+                            
+
+                        </ul>
+                    </div>
+                    <div class="circle"></div>
+                </section>
+                <footer>
+                    <div class="marquee">
+                        <span>Web Design <i>✳︎</i> Publishing <i>✳︎</i> Portfolio</span><span>Web Design <i>✳︎</i> Publishing <i>✳︎</i> Portfolio</span>
+                    </div>
+                </footer>
+            </main> 
+            <a href="#wrap" class="topBtn"><img src="images/arrow.svg" alt="맨 위로"></a>
+        </div>
+    </body>
+</html>
